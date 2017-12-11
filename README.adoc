@@ -1,12 +1,12 @@
-image:https://travis-ci.org/DendiProject/identity-provider-service.svg?branch=master["Build Status", link="https://travis-ci.org/DendiProject/identity-provider-service"]
+image:https://travis-ci.org/DendiProject/ui-service.svg?branch=master["Build Status", link="https://travis-ci.org/DendiProject/ui-service"]
 
-:link-github-project-IPS: https://dendiproject.github.io/identity-provider-service
+:link-github-project-US: https://dendiproject.github.io/ui-service
 :link-github-project-ghpages: https://dendiproject.github.io/documentation
-:link-demo-html: {link-github-project-IPS}/test.html
-:link-demo-pdf: {link-github-project-IPS}/test.pdf
+:link-demo-html: {link-github-project-US}/test.html
+:link-demo-pdf: {link-github-project-US}/test.pdf
 
 
 ** {link-github-project-ghpages}[*Link to Github Page*]
-** {link-github-project-IPS}[Link to IPS page]
-** {link-demo-html}[IPS doc HTML]
-** {link-demo-pdf}[IPS doc PDF]
+** {link-github-project-US}[Link to US page]
+** {link-demo-html}[US doc HTML]
+** {link-demo-pdf}[US doc PDF]
