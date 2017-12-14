@@ -112,5 +112,5 @@
                 </reportSets>
             </plugin>
         </plugins>
-    </build>
+    </reporting>    
 </project>
