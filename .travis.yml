@@ -10,7 +10,7 @@ script:
 before_install:
   - mkdir -p output
   - docker pull asciidoctor/docker-asciidoctor
-  - chmod +x mvnw
+  - chmod +x mvn
   - ./mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 script:
 
