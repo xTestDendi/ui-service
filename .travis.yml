@@ -15,11 +15,11 @@ before_install:
 script:
 
 
-  - docker run -v $TRAVIS_BUILD_DIR:/documents/ --name readme-to-html asciidoctor/docker-asciidoctor asciidoctor -D /documents/output *.adoc
-  - docker run -v $TRAVIS_BUILD_DIR:/documents/ --name readme-to-pdf asciidoctor/docker-asciidoctor asciidoctor-pdf -D /documents/output *.adoc
+ # - docker run -v $TRAVIS_BUILD_DIR:/documents/ --name readme-to-html asciidoctor/docker-asciidoctor asciidoctor -D /documents/output *.adoc
+ # - docker run -v $TRAVIS_BUILD_DIR:/documents/ --name readme-to-pdf asciidoctor/docker-asciidoctor asciidoctor-pdf -D /documents/output *.adoc
 
-  - docker run -v $TRAVIS_BUILD_DIR:/documents/ --name doc-to-html asciidoctor/docker-asciidoctor asciidoctor -D /documents/output doc/*.adoc
-  - docker run -v $TRAVIS_BUILD_DIR:/documents/ --name doc-to-pdf asciidoctor/docker-asciidoctor asciidoctor-pdf -D /documents/output doc/*.adoc
+ # - docker run -v $TRAVIS_BUILD_DIR:/documents/ --name doc-to-html asciidoctor/docker-asciidoctor asciidoctor -D /documents/output doc/*.adoc
+ # - docker run -v $TRAVIS_BUILD_DIR:/documents/ --name doc-to-pdf asciidoctor/docker-asciidoctor asciidoctor-pdf -D /documents/output doc/*.adoc
 
 
 after_failure:
@@ -30,11 +30,11 @@ after_failure:
 
 
 after_success:
-  - cd $TRAVIS_BUILD_DIR/temp ; ls ; mv README.html index.html
-  - mkdir doc ; mv test.pdf doc/test.pdf ; mv test.html doc/test.html
-  - cd $TRAVIS_BUILD_DIR/temp/doc ; ls
-  - rm asciidoctor.css ; rm coderay-asciidoctor.css
-  - cd $TRAVIS_BUILD_DIR/temp
+  - cd $TRAVIS_BUILD_DIR/target/generated-docs; ls ; mv README.html index.html
+  #- mkdir doc ; mv test.pdf doc/test.pdf ; mv test.html doc/test.html
+  #- cd $TRAVIS_BUILD_DIR/temp/doc ; ls
+  #- rm asciidoctor.css ; rm coderay-asciidoctor.css
+  #- cd $TRAVIS_BUILD_DIR/temp
   - git init
   - git config --global  user.name "${GH_USER_NAME}"
   - git config --global  user.email "{GH_USER_EMAIL}"
