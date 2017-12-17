@@ -11,12 +11,10 @@ before_install:
   - mkdir -p output
   - docker pull asciidoctor/docker-asciidoctor
   - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
-   cd $TRAVIS_BUILD_DIR/doc ; cp test.adoc $TRAVIS_BUILD_DIR
- - cd $TRAVIS_BUILD_DIR
+
 script:
 
-    -mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
-  - rm test.adoc 
+
   - docker run -v $TRAVIS_BUILD_DIR:/documents/ --name readme-to-html asciidoctor/docker-asciidoctor asciidoctor -D /documents/output *.adoc
   - docker run -v $TRAVIS_BUILD_DIR:/documents/ --name readme-to-pdf asciidoctor/docker-asciidoctor asciidoctor-pdf -D /documents/output *.adoc
 
