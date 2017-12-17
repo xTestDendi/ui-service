@@ -29,7 +29,11 @@ after_failure:
 
 
 after_success:
-  - cd output ; mv README.html index.html ; cp -R ../doc doc
+  - cd $TRAVIS_BUILD_DIR/temp ; ls ; mv README.html index.html
+  - mkdir doc ; mv test.pdf doc/test.pdf ; mv test.html doc/test.html
+  - cd $TRAVIS_BUILD_DIR/temp/doc ; ls
+  - rm asciidoctor.css ; rm coderay-asciidoctor.css
+  - cd $TRAVIS_BUILD_DIR/temp
   - git init
   - git config --global  user.name "${GH_USER_NAME}"
   - git config --global  user.email "{GH_USER_EMAIL}"
